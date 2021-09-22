@@ -1,0 +1,19 @@
+<form ng-form="form" (submit)="submit(form)">
+  <div class="form-group">
+
+    <input type="hidden" name="id" [(ngModel)]="registrarService.RegistrarInstance.id" />
+    <label for="name" class="control-label">
+      name
+    </label>
+    <input type="text" name="Name" [(ngModel)]="registrarService.RegistrarInstance.name" class="form-control" />
+    <label for="email" class="control-label">
+      email
+    </label>
+    <input type="text" name="Email" [(ngModel)]="registrarService.RegistrarInstance.email" (change)="validateEmail()" class="form-control" />
+    <label for="telephone" class="control-label">
+      telephone
+    </label>
+    <input type="text" name="Telephone" [(ngModel)]="http.RegistrarInstance.telephone" (change)="validateTelephone()" class="form-control" />
+  </div>
+  <input type="submit" value="Save" class="btn-primary btn-lg" />
+</form>
