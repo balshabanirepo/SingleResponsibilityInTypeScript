@@ -13,7 +13,7 @@ export class telephoneValidationService extends  apiCaller
   callAPI()
   {
    
-    this.http.get(this.url + '/ValidateTelephone', { 'params': this.params }).toPromise().then
+    this.http.get(this.url + '/ValidatePhone', { 'params': this.params }).toPromise().then
       (
         res => {
           this.result = res as string;
@@ -36,7 +36,9 @@ export class telephoneValidationService extends  apiCaller
   validateTelephone(Telephone:string)
   {
     //this.prepareToken()
-    this.params = new HttpParams().set('Telephone', Telephone).set('token',this.token);
+    alert(Telephone)
+    this.params = new HttpParams().set('Telephone', Telephone)
+
     this.callAPI()
    
     

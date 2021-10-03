@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { RegistrarService } from '../Registrar.service';
-import { validationService } from '../validation.service';
+/*import { validationService } from '../validation.service';*/
 import { NgForm } from '@angular/forms';
 import { emailValidationService } from '../emailValidation.service';
 import { telephoneValidationService } from '../telephoneValidation.service';
+
 
 @Component({
   selector: 'app-registrar-instance',
@@ -23,24 +24,24 @@ export class RegistrarItemComponent implements OnInit {
     }
   }
   submit(form: NgForm) {
-    if (this.http.RegistrarInstance.id == 0) {
-      this.http.submitNewType().subscribe(res => {
-        this.http.getAllRegistrars()
-      },
-        err => {
-          console.log(err)
-        }
-      )
-    }
-    else {
-      this.http.editType().subscribe(res => {
-        this.http.getAllRegistrars()
-      },
-        err => {
-          console.log(err)
-        }
-      )
-    }
+    //if (this.http.RegistrarInstance.id == 0) {
+    //  this.http.submitNewType().subscribe(res => {
+    //    this.http.getAllRegistrars()
+    //  },
+    //    err => {
+    //      console.log(err)
+    //    }
+    //  )
+    //}
+    //else {
+    //  this.http.editType().subscribe(res => {
+    //    this.http.getAllRegistrars()
+    //  },
+    //    err => {
+    //      console.log(err)
+    //    }
+    //  )
+    //}
 
   }
   validateEmail()
@@ -50,6 +51,7 @@ export class RegistrarItemComponent implements OnInit {
     this.emailValid = this.emailValidationService.result;
   }
   validateTelephone() {
+    alert(this.registrarService.RegistrarInstance.telephone)
     this.telephoneValidationService.validateTelephone(this.registrarService.RegistrarInstance.telephone)
     this.telephoneValid = this.telephoneValidationService.result;
   }

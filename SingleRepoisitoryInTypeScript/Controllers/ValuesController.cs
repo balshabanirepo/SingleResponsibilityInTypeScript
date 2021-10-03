@@ -22,15 +22,15 @@ namespace SingleRepoisitoryInTypeScript.Controllers
 
         // GET api/<ValuesController>/5
         [HttpGet("{id}")]
-
+        [Route("ValidateEmail")]
         public string ValidateEmail(string email,string token)
         {
             return "value";
         }
 
         [HttpGet("{id}")]
-
-        public string ValidatePhone(string email, string token)
+        [Route("ValidatePhone")]
+        public string ValidatePhone(string Telephone)
         {
             return "value";
         }
