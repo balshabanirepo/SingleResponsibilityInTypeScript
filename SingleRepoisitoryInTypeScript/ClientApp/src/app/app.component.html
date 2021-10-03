@@ -1,14 +1,32 @@
 <body>
-  <!--<app-nav-menu></app-nav-menu>
-  <div class="container">
-    <router-outlet></router-outlet>
-  </div>-->
+  <ul>
+    <li>This application demonstrtates applying single responsibility principle</li>
+    <li>
+      API functions are called to validate input in the following fields
+      <ul>
+        <li>
+          Email field
+        </li>
+        <li>
+          Telephone field
+        </li>
+      </ul>
+    </li>
+    <li>
+      Email validation API is assumed to have a token based authorization,while    telephone  validation API is not assumed so
+    </li>
+    <li>
+      Single Responsibility Principle is applied to seperate token generation logic from the valdation logic
+    </li>
+  </ul>
+
+
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-6 mt-5">
-       
+
         <app-registrar-instance></app-registrar-instance>
-</div>
+      </div>
       <div class="col-md-6">
         <registrars-component></registrars-component>
       </div>
