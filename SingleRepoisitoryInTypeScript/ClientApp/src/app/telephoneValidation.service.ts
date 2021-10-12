@@ -28,15 +28,16 @@ export class telephoneValidationService extends  apiCaller
 
   params:HttpParams
 
-  constructor(private http: HttpClient)
+  constructor(protected http: HttpClient)
   {
     super()
+    this.http=http
   }
   
   validateTelephone(Telephone:string)
   {
     //this.prepareToken()
-    alert(Telephone)
+   
     this.params = new HttpParams().set('Telephone', Telephone)
 
     this.callAPI()

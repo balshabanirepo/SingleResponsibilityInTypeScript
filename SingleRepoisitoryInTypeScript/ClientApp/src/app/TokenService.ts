@@ -43,7 +43,8 @@ export class TokenManager {
     return JSON.parse(decoded);
   }
   public generateNewToken() {
-    this.callTokenGeneration()
+    //this.callTokenGeneration()
+    this.token="token"
   }
   private callTokenGeneration()  {
      this.client.get(this.apiUrlForTokenRetrieve,

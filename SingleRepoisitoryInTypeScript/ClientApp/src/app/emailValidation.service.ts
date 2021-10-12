@@ -28,9 +28,10 @@ export class emailValidationService extends  apiCaller
 
   params:HttpParams
 
-  constructor(private http: HttpClient)
+  constructor(protected http: HttpClient)
   {
     super()
+    this.http = http;
   }
   
   validateEmail(email:string)
