@@ -1,6 +1,6 @@
 using System;
 
-namespace SingleRepoisitoryInTypeScript
+namespace SingleResponsibilityInTypeScript
 {
     public class WeatherForecast
     {

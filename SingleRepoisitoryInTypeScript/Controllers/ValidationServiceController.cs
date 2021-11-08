@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-
+using SingleResponsibilityInTypeScript.CustomAttribute;
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
-namespace SingleRepoisitoryInTypeScript.Controllers
+namespace SingleResponsibilityInTypeScript.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -23,7 +23,8 @@ namespace SingleRepoisitoryInTypeScript.Controllers
         // GET api/<ValuesController>/5
         [HttpGet("{id}")]
         [Route("ValidateEmail")]
-        public string ValidateEmail(string email,string token)
+        [Authorize]
+        public string ValidateEmail(string email)
         {
             return "value";
         }

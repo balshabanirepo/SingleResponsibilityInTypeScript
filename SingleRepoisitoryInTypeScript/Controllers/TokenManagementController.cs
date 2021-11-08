@@ -49,12 +49,12 @@ namespace TelephoneNumbersWebAPI.Controllers
 
         [HttpGet]
         [Route("GenerateNewToken")]
-        public IActionResult GenerateNewToken()
+        public async Task <IActionResult> GenerateNewToken()
         {
             IActionResult response = BadRequest();
 
 
-            var tokenString = GenerateJWTToken();
+            var tokenString = await Task.Run(() => GenerateJWTToken()); 
             response = new JsonResult(new
             {
                 token = tokenString,

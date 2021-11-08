@@ -7,8 +7,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using WebApi.Helpers;
 
-namespace SingleRepoisitoryInTypeScript
+namespace SingleResponsibilityInTypeScript
 {
     public class Startup
     {
@@ -54,7 +55,7 @@ namespace SingleRepoisitoryInTypeScript
             }
 
             app.UseRouting();
-
+            app.UseMiddleware<JwtMiddleware>();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(

@@ -5,9 +5,12 @@ var apiCaller = /** @class */ (function () {
     function apiCaller() {
     }
     apiCaller.prototype.prepareToken = function () {
+        var _this = this;
         var tokenManager = new TokenService_1.TokenManager(this.http);
-        tokenManager.generateNewToken();
-        this.token = tokenManager.token;
+        tokenManager.generateNewToken().then(function (token) {
+            _this.token = token;
+            alert(_this.token);
+        });
     };
     return apiCaller;
 }());

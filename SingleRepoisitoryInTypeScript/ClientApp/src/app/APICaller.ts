@@ -10,8 +10,10 @@ export abstract class apiCaller {
   }
   protected prepareToken() {
     const tokenManager = new TokenManager(this.http);
-    tokenManager.generateNewToken()
-    this.token = tokenManager.token;
+    tokenManager.generateNewToken().then(token=> {
+      this.token = token;
+      alert(this.token)
+  })
 
   }
 

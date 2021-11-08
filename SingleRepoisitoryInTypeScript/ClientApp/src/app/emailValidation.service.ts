@@ -13,7 +13,10 @@ export class emailValidationService extends  apiCaller
   callAPI()
   {
    
-    this.http.get(this.url + '/ValidateEmail', { 'params': this.params }).toPromise().then
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${this.token}`);
+
+ 
+    this.http.get(this.url + '/ValidateEmail', { 'params': this.params, 'headers': headers}).toPromise().then
       (
         res => {
           this.result = res as string;
@@ -34,15 +37,16 @@ export class emailValidationService extends  apiCaller
     this.http = http;
   }
   
-  validateEmail(email:string)
-  {
+  validateEmail(email: string) {
     this.prepareToken()
-    this.params = new HttpParams().set('email', email).set('token',this.token);
+      
+        this.params = new HttpParams().set('email', email);
     this.callAPI()
+  }
    
     
     
-  }
+  
 
   
 }
